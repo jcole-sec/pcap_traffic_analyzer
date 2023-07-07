@@ -1,4 +1,4 @@
-# Module 02 - PCAP Traffic Analyzer
+# PCAP Traffic Analyzer
 
 ## What?
 
@@ -70,7 +70,7 @@ options:
                         The directory path to scan for pcap files.
                         Default value: [current directory]
 
-Thanks for trying pcap_analyzer!
+For support, contact https://github.com/jcole-sec.
 ```
 
 ## Demonstration
