@@ -45,7 +45,7 @@ def get_pcaps(srcdir):
 def get_ips_from_pcap(pcap):
     """ Returns a list of unique IPs from pcap packets """
     packets = rdpcap(pcap)
-    ip_list = set([])
+    ip_list = set()
     for packet in packets:
         dst_ip = packet.sprintf("%IP.dst%")
         ip_list.add(dst_ip)
