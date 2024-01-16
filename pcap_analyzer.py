@@ -70,9 +70,7 @@ def get_public_ips(ip_list):
 def threatfox_lookup(ip):
     """ Performs ThreatFox IP Lookup for a supplied IP address """
     url = 'https://threatfox-api.abuse.ch/api/v1/'
-    data = {}
-    data["query"] = "search_ioc"
-    data["search_term"] = ip
+    data = {"query": "search_ioc", "search_term": ip}
     r = requests.post(url, data=json.dumps(data))
     if r.status_code == 200:
         return r.json()
@@ -84,8 +82,7 @@ def ripe_lookup(ip):
     """ Performs a RIPE Stat API lookup against a supplied IP and returns a response dictionary """
     url = f'https://stat.ripe.net/data/whois/data.json?resource={ip}'
     r = requests.get(url)
-    ip_data = {}
-    ip_data['ip'] = ip
+    ip_data = {'ip': ip}
     for record in r.json()['data']['records']:
         for item in record:
             ip_data[item['key']] = item['value']
